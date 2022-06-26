@@ -1,5 +1,5 @@
 function App() {
-  // Event Function
+  // Event Function Handler
   const clickMe1 = (p1) => {
     console.log(p1);
     alert(`Hello World ${p1}`);
