@@ -4,6 +4,13 @@ import { useEffect, useRef, useState } from "react";
 function App() {
   let [list, setList] = useState([]);
 
+  useEffect(() => {
+    console.log("ANything.....");
+
+    // INitilzed the ajax call;
+    callAjaxNow();
+  }, []);
+
   let callAjaxNow = async () => {
     const url = "https://jsonplaceholder.typicode.com/posts";
     let res = await axios.get(url);
@@ -16,7 +23,6 @@ function App() {
   return (
     <div>
       <h1>Hello Life Cycle</h1>
-      <input type="button" value="Call Ajax Now" onClick={callAjaxNow} />
 
       {list.map((item, index) => (
         <div key={index}>{item.title}</div>
