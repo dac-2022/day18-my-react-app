@@ -7,6 +7,7 @@ function App() {
     <div>
       <h1>Conditional Block</h1>
 
+      {/** IF  */}
       {!login && (
         <p>
           Login Page. Please login with your creedntials. ELse create an Account
@@ -14,6 +15,7 @@ function App() {
         </p>
       )}
 
+      {/** IF */}
       {login && (
         <p>
           Home Page :: Lorem ipsum dolor sit amet consectetur adipisicing elit.
