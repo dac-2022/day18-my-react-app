@@ -1,8 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
+      <div>
+        <Link to="/page1">Page1 | </Link>
+        <Link to="/page2">Page2</Link>
+      </div>
+
       <Routes>
         <Route path="/" element={<Page1 />} />
         <Route path="/page1" element={<Page1 />} />
