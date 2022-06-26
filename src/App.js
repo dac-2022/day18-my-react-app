@@ -1,39 +1,29 @@
-import axios from "axios";
-import { useEffect, useRef, useState } from "react";
-import { Container, Navbar } from "react-bootstrap";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  let [list, setList] = useState([]);
-
-  useEffect(() => {
-    console.log("ANything.....");
-
-    // INitilzed the ajax call;
-    callAjaxNow();
-  }, []);
-
-  let callAjaxNow = async () => {
-    const url = "https://jsonplaceholder.typicode.com/posts";
-    let res = await axios.get(url);
-
-    // react specifc, updating the statful variable.
-    const newList = [...res.data];
-    setList(newList);
-  };
-
   return (
-    <div className="contianer-fluid">
-      <Navbar expand="lg" variant="dark" bg="primary" sticky="top">
-        <Container>
-          <Navbar.Brand href="#">Tweet Book</Navbar.Brand>
-        </Container>
-      </Navbar>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Page1 />} />
+        <Route path="/page1" element={<Page1 />} />
+        <Route path="/page2" element={<Page2 />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
-      {list.map((item, index) => (
-        <div className="alert alert-primary mb-1 h3" key={index}>
-          {item.title}
-        </div>
-      ))}
+function Page1() {
+  return (
+    <div>
+      <h1>Page1..... </h1>
+    </div>
+  );
+}
+
+function Page2() {
+  return (
+    <div>
+      <h1>Page2... </h1>
     </div>
   );
 }
