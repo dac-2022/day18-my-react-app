@@ -6,11 +6,17 @@ let countReducer = createSlice({
     count: 0,
   },
   reducers: {
-    increment: (state) => {
+    increment: (state, action) => {
+      console.log(action);
       state.count += 1;
     },
-    decrement: (state) => {
+    decrement: (state, action) => {
+      console.log(action);
       state.count -= 1;
+    },
+    incrementByTen(state, action) {
+      console.log(action);
+      state.count += 10;
     },
   },
 });

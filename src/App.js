@@ -28,7 +28,7 @@ function Page1() {
       <input
         type="button"
         value="Increment"
-        onClick={() => dispatch(increment())}
+        onClick={() => dispatch(increment(10))}
       />
     </div>
   );
