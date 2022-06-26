@@ -1,29 +1,27 @@
+import { useState } from "react";
+
 function App() {
-  // Event Function Handler
-  const clickMe1 = (p1) => {
-    console.log(p1);
-    alert(`Hello World ${p1}`);
-  };
+  let [login] = useState(false);
 
   return (
     <div>
-      <h1>Event Binding Demo</h1>
+      <h1>Conditional Block</h1>
 
-      {/** This is shourcut */}
-      <input type="button" value="Click Me" onClick={clickMe1} />
+      {!login && (
+        <p>
+          Login Page. Please login with your creedntials. ELse create an Account
+          wiht us.
+        </p>
+      )}
 
-      {/** Internally React Convert into this. */}
-      <input type="button" value="Click Mee" onClick={(e) => clickMe1(e)} />
-
-      {/** This approach is very important, when we need to pass parameter */}
-      <input type="button" value="Click Me 1" onClick={() => clickMe1()} />
-
-      {/** Pass Parameter to function */}
-      <input
-        type="button"
-        value="Click Me 2"
-        onClick={() => clickMe1("Rohit")}
-      />
+      {login && (
+        <p>
+          Home Page :: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Ducimus minima, velit totam et asperiores laborum assumenda omnis
+          voluptates. Vitae consectetur sequi natus cupiditate non officia
+          veniam recusandae suscipit illo doloribus.
+        </p>
+      )}
     </div>
   );
 }
