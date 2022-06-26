@@ -13,7 +13,7 @@ function App() {
       <div className="row justify-content-center">
         <div className="col-6">
           <Carousel>
-            <Carousel.Item>
+            <Carousel.Item interval={1000}>
               <img
                 className="d-block w-100"
                 src="https://picsum.photos/401"
@@ -26,7 +26,7 @@ function App() {
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={500}>
               <img
                 className="d-block w-100"
                 src="https://picsum.photos/400/"
@@ -38,7 +38,7 @@ function App() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={1000}>
               <img
                 className="d-block w-100"
                 src="https://picsum.photos/402"
