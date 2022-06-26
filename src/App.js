@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import { Container, Navbar } from "react-bootstrap";
 
 function App() {
   let [list, setList] = useState([]);
@@ -21,11 +22,17 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Hello Life Cycle</h1>
+    <div className="contianer-fluid">
+      <Navbar expand="lg" variant="dark" bg="primary" sticky="top">
+        <Container>
+          <Navbar.Brand href="#">Tweet Book</Navbar.Brand>
+        </Container>
+      </Navbar>
 
       {list.map((item, index) => (
-        <div key={index}>{item.title}</div>
+        <div className="alert alert-primary mb-1 h3" key={index}>
+          {item.title}
+        </div>
       ))}
     </div>
   );
