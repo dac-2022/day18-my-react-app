@@ -3,11 +3,14 @@ import { increment, decrement } from "./store/store";
 
 function App() {
   let state = useSelector((state) => state);
+  console.log(state);
 
   return (
     <div>
       <h1>Redux Book</h1>
-      <h1>Count {state.counter.count}</h1>
+      <h1>
+        Count {state.counter.title} {state.counter.count}
+      </h1>
 
       <hr />
       <Page1 />
@@ -24,7 +27,9 @@ function Page1() {
   return (
     <div>
       <h1>Page1</h1>
-      <h1>Count {state.counter.count}</h1>
+      <h1>
+        Count {state.counter.title} {state.counter.count}
+      </h1>
       <input
         type="button"
         value="Increment"
@@ -40,7 +45,9 @@ function Page2() {
   return (
     <div>
       <h1>Page2</h1>
-      <h1>Count {state.counter.count}</h1>
+      <h1>
+        Count {state.counter.title} {state.counter.count}
+      </h1>
       <input
         type="button"
         value="Increment"

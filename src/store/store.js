@@ -4,6 +4,7 @@ let countReducer = createSlice({
   name: "counter",
   initialState: {
     count: 0,
+    title: "Hello",
   },
   reducers: {
     increment: (state, action) => {
